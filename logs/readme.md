@@ -1,1 +1,1 @@
-# This is a placeholder file to store logs
+# This is a placeholder folder to store any logs
