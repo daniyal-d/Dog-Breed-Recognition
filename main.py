@@ -25,7 +25,7 @@ st.subheader("Upload a photo below to get the model's predictions")
 st.caption("Created by Daniyal Dawood")
 
 # File upload
-uploaded_image = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
+uploaded_image = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg", "webp])
 
 # Predictions
 labels_csv = pd.read_csv("labels.csv")
