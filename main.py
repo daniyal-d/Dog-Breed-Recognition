@@ -121,7 +121,7 @@ if uploaded_image is not None:
         image = Image.open(uploaded_image)
         image_array = np.array(image)
         st.write("Uploaded Image")
-        st.image(image, use_column_width=False)
+        st.image(image, use_column_width=True)
     except:
         st.write("The image cannot be displayed, please try again.")
 
