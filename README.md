@@ -1,5 +1,5 @@
 # Dog-Breed-Recognition
-Web app that uses deep learning to detect the breed on a dog from an image. Has 81.12% accuracy on the validation set.
+Web app that uses deep learning to detect the breed on a dog from an image. Has 81.12% accuracy on the validation set. View the notebook by opening `Dog_Breed_Recognition.ipynb` and the validation test by opening `Validation Test.ipynb`
 
 Website link: https://daniyal-d-dog-breed-recognition-main-w86ypc.streamlitapp.com/
 
