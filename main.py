@@ -154,4 +154,4 @@ if uploaded_image is not None:
             plotted_preds = plot_custom_pred_confidence(custom_preds)
             st.pyplot(plotted_preds, use_column_width=False)
     except:
-        st.write("The app encountered an error. Please try again or upload a different image.)
+        st.write("The app encountered an error. Please try again or upload a different image.")
