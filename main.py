@@ -126,29 +126,32 @@ if uploaded_image is not None:
         st.write("The image cannot be displayed, please try again.")
 
     # Save image to directory
-    save_img("custom/uploaded_image.png", image_array)
-    image_path = ["custom/uploaded_image.png"]
+    try:
+        save_img("custom/uploaded_image.png", image_array)
+        image_path = ["custom/uploaded_image.png"]
 
-    # Get predictions
-    custom_data = create_batch(image_path, test=True)
-    custom_preds = loaded_model.predict(custom_data)
-    custom_pred_label = [get_pred_breed(custom_preds[i]) for i in range(len(custom_preds))]
-    st.write(f"The model's most confident prediction is that the dog's breed is **{custom_pred_label[0].capitalize()} "
-             f"({np.max(custom_preds) * 100:2.0f}% confidence)**")
-    st.write("Below are the model's 10 most confident predictions")
+        # Get predictions
+        custom_data = create_batch(image_path, test=True)
+        custom_preds = loaded_model.predict(custom_data)
+        custom_pred_label = [get_pred_breed(custom_preds[i]) for i in range(len(custom_preds))]
+        st.write(f"The model's most confident prediction is that the dog's breed is **{custom_pred_label[0].capitalize()} "
+                 f"({np.max(custom_preds) * 100:2.0f}% confidence)**")
+        st.write("Below are the model's 10 most confident predictions")
 
-    col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
 
-    pred_prob = custom_preds[0]
-    top_10_pred_indexes = pred_prob.argsort()[-10:][::-1]
-    top_10_pred_values = pred_prob[top_10_pred_indexes]
-    top_10_pred_labels = unique_breeds[top_10_pred_indexes]
-    top_10_pred_list = zip(top_10_pred_labels, top_10_pred_values)
+        pred_prob = custom_preds[0]
+        top_10_pred_indexes = pred_prob.argsort()[-10:][::-1]
+        top_10_pred_values = pred_prob[top_10_pred_indexes]
+        top_10_pred_labels = unique_breeds[top_10_pred_indexes]
+        top_10_pred_list = zip(top_10_pred_labels, top_10_pred_values)
 
-    with col1:
-        for i in list(top_10_pred_list):
-            st.write(f"**{i[0].capitalize()} ({i[1] * 100:2.0f}% confidence)**")
+        with col1:
+            for i in list(top_10_pred_list):
+                st.write(f"**{i[0].capitalize()} ({i[1] * 100:2.0f}% confidence)**")
 
-    with col2:
-        plotted_preds = plot_custom_pred_confidence(custom_preds)
-        st.pyplot(plotted_preds, use_column_width=False)
+        with col2:
+            plotted_preds = plot_custom_pred_confidence(custom_preds)
+            st.pyplot(plotted_preds, use_column_width=False)
+    except:
+        st.write("The app encountered an error. Please try again or upload a different image.)
