@@ -3,7 +3,7 @@ Web app that uses deep learning to detect the breed on a dog from an image. Has 
 
 Website link: https://daniyal-d-dog-breed-recognition-main-w86ypc.streamlitapp.com/
 
-This project used the Stanford Dog Breed dataset (http://vision.stanford.edu/aditya86/ImageNetDogs/menu_frame.html) and MobileNet V2 (https://tfhub.dev/google/imagenet/mobilenet_v2_130_224/classification/5) to train and test the data. The training folder contained over 10,000 images, which the final website model was trained on. In order to evaluate the dataset, a new model was instantiated, trained on 80% of the training data and then tested on the remaining 20% (validation set). This model had 81.12% accuracy on the validation set, but because the website model was trained on more images, it may be slightly higher.
+This project used the Stanford Dog Breed dataset (http://vision.stanford.edu/aditya86/ImageNetDogs/menu_frame.html, https://www.kaggle.com/competitions/dog-breed-identification/data) and MobileNet V2 (https://tfhub.dev/google/imagenet/mobilenet_v2_130_224/classification/5) to train and test the data. The training folder contained over 10,000 images, which the final website model was trained on. In order to evaluate the dataset, a new model was instantiated, trained on 80% of the training data and then tested on the remaining 20% (validation set). This model had 81.12% accuracy on the validation set, but because the website model was trained on more images, it may be slightly higher.
 
 # How the website works
 Simply upload a photo of a dog to the website, and it will output its 10 most confident predictions. The website will also output a downloadable bar graph of its predictions.
