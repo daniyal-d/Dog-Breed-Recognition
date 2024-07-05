@@ -10,7 +10,7 @@ from PIL import Image
 st.title("Dog Breed Recognition")
 st.subheader("This project uses Deep Learning and MobileNetV2 to detect the breeds of dogs from images. It was "
              "trained using the Stanford Dog Breed dataset.")
-st.subheader("The model has 81.12% accuracy on the validation data and 99.9% accuracy on the train data.")
+st.subheader("The model has 81.12% accuracy on the validation data.")
 st.subheader("Upload a photo below to get the model's predictions")
 st.caption("Created by Daniyal Dawood")
 
