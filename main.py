@@ -7,16 +7,6 @@ import tensorflow_hub as hub
 from tensorflow.keras.preprocessing.image import save_img
 from PIL import Image
 
-with st.sidebar:
-    st.markdown("""This project was trained on the Stanford ImageNet Dog Breed dataset
-    http://vision.stanford.edu/aditya86/ImageNetDogs/menu_frame.html""")
-    st.markdown("Due to this, the model can only properly predict a dog breed if it was trained on it. Please note "
-                "that the dataset does not contain certain dog breeds (such as Shiba Inu), and therefore the "
-                "model may not be able to properly predict one.")
-    st.markdown("This model still scored over 80% on the validation data, however, note that the validation data came "
-                "from the ImageNet dataset") 
-
-
 st.title("Dog Breed Recognition")
 st.subheader("This project uses Deep Learning and MobileNetV2 to detect the breeds of dogs from images. It was "
              "trained using the Stanford Dog Breed dataset.")
